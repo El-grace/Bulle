@@ -1,0 +1,187 @@
+:root {
+    --color1: #0E6FDF;
+    --color2: #092E63;
+    --color3: #EEF6FF;
+    --color4: #F9F8FD;
+    --font: 'Work Sans', sans-serif;
+}
+*{
+    margin: 0 !important;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font);
+    /* background: var(--color3); */
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+p{
+    font-size: 1.2rem;
+    line-height: 1.5;
+    text-align: justify;
+    padding: 20px 0;
+}
+body {    font-family: var(--font);
+    box-sizing: border-box;
+            margin: 0;
+            background-color: #f4f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            max-width: 1200px;
+            height: 90vh;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .slider {
+            width: 50%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            width: 300%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .slide {
+            width: 33.33%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slider-nav {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .slider-nav span {
+            width: 12px;
+            height: 12px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .slider-nav .active {
+            background-color: #1a73e8;
+        }
+
+        .form-section {
+            width: 40%;
+            background-color: white;
+            padding: 30px;
+            gap: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .form-section h2 {
+            color: #1a73e8;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .form-section p {
+            color: #5f6368;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #dadce0;
+            border-radius: 6px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #1a73e8;
+            box-shadow: 0 0 5px rgba(26, 115, 232, 0.3);
+        }
+
+        .terms {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+            font-size: 12px;
+            color: #5f6368;
+        }
+
+        .terms input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #1557b0;
+        }
+
+        .login-text {
+            text-align: center;
+            color: #5f6368;
+            font-size: 12px;
+            margin-top: 20px;
+        }
+
+        .login-text a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .slider,
+            .form-section {
+                width: 100%;
+            }
+
+            .slider {
+                height: 300px;
+            }
+        }
