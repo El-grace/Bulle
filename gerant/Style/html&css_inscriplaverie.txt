@@ -1,0 +1,152 @@
+//html
+<div class="add-laverie-form">
+    <h2>Ajouter une nouvelle laverie</h2>
+    <form action="add_laverie.php" method="POST">
+        <label for="nom">Nom :</label><br>
+        <input type="text" id="nom" name="nom" required><br>
+        <label for="address">Adresse :</label><br>
+        <input type="text" id="address" name="address" required><br>
+        <label for="lieu">Lieu :</label><br>
+        <input type="text" id="lieu" name="lieu"><br>
+        <label for="description">Description :</label><br>
+        <textarea id="description" name="description"></textarea><br>
+        <label for="horaires">Horaires :</label><br>
+        <input type="text" id="horaires" name="horaires"><br>
+        <label for="telephone">Téléphone :</label><br>
+        <input type="text" id="telephone" name="telephone"><br>
+        <label for="email">Email :</label><br>
+        <input type="email" id="email" name="email"><br>
+        <label for="note">Note :</label><br>
+        <input type="number" id="note" name="note" step="0.1" min="0" max="5"><br>
+        <label for="nbre_note">Nombre de notes :</label><br>
+        <input type="number" id="nbre_note" name="nbre_note" min="0"><br>
+        <label for="latitude">Latitude :</label><br>
+        <input type="number" id="latitude" name="latitude" step="0.000001"><br>
+        <label for="longitude">Longitude :</label><br>
+        <input type="number" id="longitude" name="longitude" step="0.000001"><br>
+        <input type="submit" value="Ajouter la laverie">
+    </form>
+</div>
+
+
+//css
+
+.add-laverie-form {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    background: #eef6ff85;
+    border-radius: 10px;
+}
+
+.add-laverie-form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.add-laverie-form input,
+.add-laverie-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid var(--color2);
+    border-radius: 5px;
+}
+
+.add-laverie-form input[type="submit"] {
+    margin-top: 15px;
+    background: var(--color1);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.add-laverie-form input[type="submit"]:hover {
+    background: var(--color2);
+}
+
+
+// php
+
+<?php
+// Connexion à la base de données
+$host = 'localhost';
+$dbname = 'bd_laveries';
+$username = 'root';
+$password = '';
+
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Erreur de connexion : " . $e->getMessage());
+}
+
+// Vérifier si le formulaire est soumis
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nom = $_POST['nom'];
+    $address = $_POST['address'];
+    $lieu = $_POST['lieu'] ?? '';
+    $description = $_POST['description'] ?? '';
+    $horaires = $_POST['horaires'] ?? '';
+    $telephone = $_POST['telephone'] ?? '';
+    $email = $_POST['email'] ?? '';
+    $note = $_POST['note'] ?? 0.0;
+    $nbre_note = $_POST['nbre_note'] ?? 0;
+    $latitude = $_POST['latitude'] ?? 0.0;
+    $longitude = $_POST['longitude'] ?? 0.0;
+
+    // Préparer et exécuter l'insertion
+    $stmt = $pdo->prepare("INSERT INTO t_laveries (nom, address, lieu, description, horaires, telephone, email, note, nbre_note, latitude, longitude) VALUES (:nom, :address, :lieu, :description, :horaires, :telephone, :email, :note, :nbre_note, :latitude, :longitude)");
+    $stmt->execute([
+        ':nom' => $nom,
+        ':address' => $address,
+        ':lieu' => $lieu,
+        ':description' => $description,
+        ':horaires' => $horaires,
+        ':telephone' => $telephone,
+        ':email' => $email,
+        ':note' => $note,
+        ':nbre_note' => $nbre_note,
+        ':latitude' => $latitude,
+        ':longitude' => $longitude
+    ]);
+
+    echo "Nouvelle laverie ajoutée avec succès ! Retournez à la page principale.";
+    // Redirection optionnelle après ajout
+    header("Refresh: 2; URL=laverie.php");
+    exit();
+} else {
+    echo "Accès non autorisé.";
+}
+?>
+
+
+
+
+// description 
+Étape 3 : Tester
+
+Ouvre http://localhost/laverie.php dans ton navigateur.
+Remplis le formulaire avec les informations d’une nouvelle laverie et clique sur "Ajouter la laverie".
+Vérifie dans phpMyAdmin que la nouvelle laverie apparaît dans t_laveries.
+
+Connexion entre laverie.php et add_laverie.php
+
+Le formulaire dans laverie.php envoie les données à add_laverie.php via l’attribut action="add_laverie.php". Il n’y a pas besoin d’une connexion directe (comme un include) entre les deux fichiers pour l’instant, car add_laverie.php traite les données soumises indépendamment.
+Si tu veux que laverie.php affiche les laveries de la base de données au lieu de l’HTML fixe, tu devras ajouter une logique PHP dans laverie.php pour récupérer les données de t_laveries (je peux t’aider avec ça si tu veux).
+
+
+Réponse à ta question
+Tu ne dois pas obligatoirement connecter insert_laveries.php avec laverie.php pour le Cas 1, car insert_laveries.php est un script ponctuel pour initialiser la base de données. Une fois les données insérées, tu n’as plus besoin de ce fichier, sauf si tu veux le réutiliser.
+Pour le Cas 2, laverie.php et add_laverie.php sont déjà "connectés" via le formulaire : laverie.php envoie les données à add_laverie.php quand le gérant soumet le formulaire. Tu n’as pas besoin d’un include ou d’une connexion manuelle entre eux.
+
+Prochaines étapes
+
+Cas 1 : Exécute insert_laveries.php pour insérer tes laveries actuelles. Si ça marche, on peut passer à la suite.
+Cas 2 : Teste le formulaire et dis-moi si tu veux ajouter une authentification (pour limiter l’accès aux gérants) ou améliorer l’affichage des données.
+Si tu as une erreur ou une question, partage-la avec moi !
+
+Est-ce que c’est plus clair maintenant ?

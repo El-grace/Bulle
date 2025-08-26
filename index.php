@@ -1,3 +1,4 @@
+HTML
 <html lang="fr">
 
 <head>
@@ -124,7 +125,7 @@
                 <h3>Fatime Traoré</h3>
                 <p class="buanderie">Plateau – Bu'erie</p>
                 <p class="commentaire">“ J’ai découvert Bulle par hasard, et j’ai été agréablement surprise par la simplicité de l’application. <br>
-                    j’ai cliqué ! Depuis, Bulle est mon réflexe. ” <b class="stars">★★★★★</b></p>
+                    j’ai cliqué ! Depuis, Bulle est mon réflexe. ” <br> <b class="stars">★★★★★</b></p>
             </div>
             <!-- Client 1 -->
             <div class="avis-card">
@@ -133,7 +134,7 @@
                 <div>
                     <p class="commentaire">“ Grâce à Bulle, j’ai trouvé une buanderie spécialisée dans le nettoyage des draps à seulement 5 minutes
                         <br> de chez moi.
-                        ” <b class="stars">★★★★★</b>
+                        ” <br> <b class="stars">★★★★★</b>
                     </p>
                 </div>
             </div>
@@ -143,7 +144,7 @@
                 <p class="buanderie">Yopougon_Lav'Express </p>
                 <div>
                     <p class="commentaire">“ Je cherchais une buanderie qui propose le repassage uniquement, et avec Bulle,
-                        j’ai pu filtrer les services. <br> Très utile ! ” <b class="stars">★★★★★</b>
+                        j’ai pu filtrer les services. <br> Très utile ! ” <br> <br><b class="stars">★★★★★</b>
                     </p>
                 </div>
             </div>
@@ -155,7 +156,7 @@
                 <div>
                     <p class="commentaire"> “ Ce que j’ai aimé avec Bulle, c’est la possibilité de voir les notes et les
                         commentaires laissés
-                        <br> sur chaque buanderie. ” <b class="stars">★★★★★</b>
+                        <br> sur chaque buanderie. ”<br><br><br><b class="stars"> ★★★★★</b>
                     </p>
                 </div>
             </div>

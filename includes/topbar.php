@@ -170,7 +170,7 @@
                 <a href="planification.php">Planification</a>
                 <a href="contact.php">Contact</a>
             </div>
-            <button type="submit">Se connecter</button>
+            <form action="se_connecter.php" method="post"><button type="submit">Se connecter</button></form>
         </nav>
     </header>
     <main>

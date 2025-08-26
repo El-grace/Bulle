@@ -1,0 +1,248 @@
+:root {
+    --color1: #0E6FDF;
+    --color2: #092E63;
+    --color3: #EEF6FF;
+    --color4: #F9F8FD;
+    --font: 'Work Sans', sans-serif;
+}
+
+body {
+    font-family: var(--font);
+    margin: 0;
+    padding: 0;}
+
+* {
+    margin: 0 !important;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font);
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    text-align: justify;
+    padding: 20px 0;
+}
+
+.container { 
+/* max-width: 1000px; */
+padding: 40px;
+display: grid;
+grid-template-columns: 73% 20%;
+align-items: center;
+justify-content: center;
+gap: 20px;
+height: auto;
+}
+
+.form-section {
+    border-radius: 40px;
+    background: linear-gradient(to bottom right, var(--color3), rgba(255, 255, 255, 0.301));
+ padding: 20px;
+}
+#step1{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px 0;
+    justify-content: space-evenly;
+}
+
+.form-group {
+margin-bottom: 20px;
+}
+
+.form-group label {
+display: block;
+font-size: clamp(0.9rem, 2.5vw, 1rem);
+color: var(--color2);
+padding-bottom: 9px;
+}
+
+.form-group input,
+.form-group select {
+width: 100%;
+padding: 15px;
+border: 1px solid #cccccca0;
+background: transparent;
+border-radius: 10px;
+font-size: clamp(0.8rem, 2vw, 0.95rem);
+}
+.form-group input:focus,
+.form-group select:focus{
+      outline: none;
+            border-color: var(--color1);
+            box-shadow: 0 0 5px rgba(26, 115, 232, 0.251);
+}
+
+.form-group .checkbox-group {
+display: flex;
+gap: 15px;
+padding-top: 5px;
+}
+
+.form-group .checkbox-group input {
+       outline: none;
+padding-right: 5px;
+}
+.types{
+    /* width: 50%; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+background: var(--color4);
+border-radius :20px; 
+padding: 10px 20px;
+}
+
+.form-group2 p {
+    padding-bottom: 2px;
+    font-weight: 100;
+font-size: clamp(0.9rem, 2.5vw, 1rem);
+color: var(--color2);
+}
+
+.info-box {
+background: var(--color1);
+color: #fff;
+padding: 15px;
+border-radius: 15px 15px 0 15px;
+margin-bottom: 20px;
+font-size: clamp(0.8rem, 2vw, 0.9rem);
+}
+
+.date-group {
+display: flex;
+gap: 20px;
+}
+
+.date-group .form-group {
+flex: 1;
+}
+
+.stage-section {
+    position: fixed;
+    width: 22%;
+ max-height: calc(100vh - 200px - 100px); 
+     overflow-y: auto;
+    right: 26px;
+    top: 200px;
+box-shadow: #0e70df4e 1px 3px 5px 0px;
+padding: 10px;
+border-radius: 15px;
+text-align: center;
+}
+
+.stage-section h2 {
+font-size: clamp(1rem, 2.5vw, 1.2rem);
+color: var(--color2);
+margin-bottom: 20px;
+}
+
+.stage-section ul {
+list-style: none;
+padding: 0;
+}
+
+.stage-section ul li {
+padding: 10px 0;
+font-size: clamp(0.8rem, 2vw, 0.95rem);
+color: var(--color2);
+}
+
+.stage-section ul li.active {
+color: var(--color1);
+font-weight: 600;
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; }
+ .butn {
+            width: 16%;
+            padding: 18px;
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .butn:hover {
+            background-color: #1557b0;
+        }
+
+.hidden {
+display: none;
+}
+
+@media (max-width: 768px) {
+.container {
+flex-direction: column;
+}
+
+.date-group {
+flex-direction: column;
+}
+
+.form-group input,
+.form-group select {
+width: 100%;
+}
+
+header {
+flex-direction: column;
+gap: 10px;
+}
+
+header nav a {
+margin: 5px 10px;
+}
+
+.stage-section {
+order: -1; /* Move stage section above form on tablets */
+}
+}
+
+@media (max-width: 480px) {
+.container {
+margin: 20px;
+padding: 10px;
+}
+
+.form-section {
+padding: 15px;
+}
+
+.stage-section {
+padding: 15px;
+}
+
+.form-group label {
+font-size: clamp(0.8rem, 2vw, 0.9rem);
+}
+
+.form-group input,
+.form-group select {
+font-size: clamp(0.7rem, 1.8vw, 0.8rem);
+padding: 8px;
+}
+
+button {
+padding: 8px;
+font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+}
+
+.info-box {
+font-size: clamp(0.7rem, 1.8vw, 0.8rem);
+padding: 10px;
+}
+}

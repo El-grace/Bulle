@@ -1,0 +1,189 @@
+:root {
+    --color1: #0E6FDF;
+    --color2: #092E63;
+    --color3: #EEF6FF;
+    --color4: #F9F8FD;
+    --font: 'Work Sans', sans-serif;
+}
+*{
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font);
+    /* background: var(--color3); */
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+p{
+    font-size: 1rem;
+    line-height: 1.1;
+    text-align: justify;
+}
+        body {
+            font-family: var(--font);
+            margin: 0;
+            padding: 0;
+            background-color: var(--color4);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--color1);
+            color: white;
+            padding: 10px 20px;
+        }
+        .header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .header .user {
+            display: flex;
+            align-items: center;
+        }
+        .header .user img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: white;
+            height: 100vh;
+            position: fixed;
+            padding: 20px;
+        }
+        .sidebar a {
+            display: block;
+            color: var(--color2);
+            padding: 10px;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+        .sidebar a.active {
+            background-color: var(--color3);
+            border-radius: 5px;
+        }
+        .main-content {
+            margin-left: 270px;
+            padding: 20px;
+        }
+        .dashboard-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .stat-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 20%;
+        }
+        .stat-card.green { background-color: #e6ffe6; }
+        .stat-card.purple { background-color: #f3e6ff; }
+        .stat-card.orange { background-color: #ffe6e6; }
+        .stat-card h3 { margin: 0; font-size: 24px; }
+        .stat-card p { margin: 5px 0 0; color: #666; }
+        .machines-table {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .machine-container {
+            width: 100%;
+        }
+        .machine-header {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: var(--color3);
+        }
+        .machine-header div {
+            flex: 1;
+            text-align: left;
+            padding: 0 10px;
+        }
+        .machine-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .machine-item div {
+            flex: 1;
+            text-align: left;
+            padding: 0 10px;
+        }
+        .status {
+            padding: 5px 10px;
+            border-radius: 10px;
+            color: white;
+        }
+        .status.Disponible { background-color: #28a745; }
+        .status.En_cours { background-color: #fd7e14; }
+        .status.Maintenance { background-color: #ffc107; }
+        .actions button {
+            border: none;
+            background: none;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .add-machine {
+            background-color: var(--color1);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+          .reservations {
+            border: #092E63 1px solid;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .reservations h2 {
+            margin: 0 0 20px 0;
+            color: var(--color2);
+        }
+        .reservation-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .reservation-item img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .reservation-info {
+            flex-grow: 1;
+        }
+        .reservation-time {
+            font-weight: bold;
+            color: var(--color2);
+        }
+        .reservation-status {
+            padding: 5px 10px;
+            border-radius: 15px;
+            color: white;
+        }
+        .reservation-status.En_cours { background-color: #28a745; }
+        .reservation-status.Confirmée { background-color: var(--color1); }
+        .reservation-status.Terminée { background-color: #dc3545; }
+        .see-all {
+            text-align: right;
+            margin-top: 10px;
+        }
+        .see-all a {
+            color: var(--color1);
+            text-decoration: none;
+            font-weight: bold;
+        }
