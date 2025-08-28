@@ -20,6 +20,9 @@ body {
     box-sizing: border-box;
     font-family: var(--font);
 }
+.logo {border: #092E63 1px solid;
+    width: 10px;
+}
 
 .dashboard {
     max-width: 1400px;

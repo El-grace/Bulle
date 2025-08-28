@@ -59,25 +59,25 @@
 </head>
 
 <body>
-    <div class="header">
-        <div class="logo">
-            <img src="images/logo_blanc.png" alt="">
-        </div>
-        <div class="user">
-            <img src="https://via.placeholder.com/40" alt="Admin">
-            <span>Admin</span>
-        </div>
-    </div>
     <div class="sidebar">
-        <a href="#" class="active">Tableau de bord</a>
-        <a href="#">Machines</a>
-        <a href="#">Clients</a>
-        <a href="#">Réservations</a>
-        <a href="#">Facturation</a>
-        <a href="#">Statistiques</a>
-        <a href="#">Paramètres</a>
+        <img src="images/logobulle.png" alt="">
+        <div>
+            <a href="#" class="active">Tableau de bord</a>
+            <a href="#">Machines</a>
+            <a href="#">Clients</a>
+            <a href="#">Réservations</a>
+            <a href="#">Facturation</a>
+            <a href="#">Statistiques</a>
+            <a href="#">Paramètres</a>
+        </div>
     </div>
     <div class="main-content">
+        <div class="header">
+            <div class="user">
+                <h1>Bienvenue sur votre espace de gestion</h3>
+                    <p>Pilotez votre entreprise en toute simplicité et en toute sécurité</p>
+            </div>
+        </div>
         <div class="dashboard-stats">
             <div class="stat-card">
                 <h3>24</h3>

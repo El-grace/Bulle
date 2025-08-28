@@ -424,6 +424,10 @@ button:hover {
 .newsletter button:hover {
     background: var(--color2);
 }
+.bouuut{
+    display: flex;justify-content:center;
+    gap: 20px;
+}
 
 .footer {
     padding: 80px 20px;

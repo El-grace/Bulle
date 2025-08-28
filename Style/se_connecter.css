@@ -132,13 +132,11 @@ body {
       text-decoration: none;
     }
 
-    .google-button {
-      width: 70%;
-            font-size: 0.9rem;
+    .connect_gerant {
+      width: 100%;
+            font-size: 1rem;
       padding: 10px;
-      border: 1px solid #dadce0;
       border-radius: 4px;
-      background-color: white;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -147,7 +145,4 @@ body {
       cursor: pointer;
     }
 
-    .google-button img {
-      width: 20px;
-      height: 20px;
-    }
+    

@@ -5,56 +5,45 @@
     --color4: #F9F8FD;
     --font: 'Work Sans', sans-serif;
 }
-*{
+*{margin: 6px 0;
     padding: 0;
     box-sizing: border-box;
     font-family: var(--font);
-    /* background: var(--color3); */
 }
 a {
     text-decoration: none;
     color: black;
 }
 p{
-    font-size: 1rem;
-    line-height: 1.1;
-    text-align: justify;
+    font-size: 0.8rem;
 }
-        body {
-            font-family: var(--font);
-            margin: 0;
-            padding: 0;
-            background-color: var(--color4);
-        }
         .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             background-color: var(--color1);
             color: white;
             padding: 10px 20px;
+            border-radius: 20px;
+            margin: 29px;
         }
-        .header .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-        .header .user {
-            display: flex;
-            align-items: center;
-        }
-        .header .user img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
+       
         .sidebar {
-            width: 250px;
-            background-color: white;
+            width: 40vh;
+            border-radius: 40px;
             height: 100vh;
+            color: white;
             position: fixed;
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            /* align-items: center; */
         }
+        .sidebar img{
+            width: 55%;
+            margin: 20px;
+        }
+
+       .user p{
+font-size: 1rem;
+}
         .sidebar a {
             display: block;
             color: var(--color2);
@@ -63,21 +52,25 @@ p{
             margin-bottom: 10px;
         }
         .sidebar a.active {
-            background-color: var(--color3);
+            background-color: var(--color2);
+            color: white;
             border-radius: 5px;
         }
         .main-content {
             margin-left: 270px;
-            padding: 20px;
+            padding:  0 20px;
         }
         .dashboard-stats {
+            /* border: #092E63 1px solid; */
+    box-shadow: 6px 7px 6px 1px #89add71a;
+                border-radius: 10px;
             display: flex;
             justify-content: space-around;
             margin-bottom: 20px;
         }
         .stat-card {
             background-color: white;
-            padding: 20px;
+            padding: 30px 20px;
             border-radius: 10px;
             text-align: center;
             width: 20%;

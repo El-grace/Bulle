@@ -1,4 +1,3 @@
-HTML
 <html lang="fr">
 
 <head>
@@ -167,7 +166,7 @@ HTML
         <div class="newsletter">
             <h2>Abonnez-vous à notre newsletter</h2>
             <p>Restez informé des dernières offres et promotions exclusives !</p>
-            <form>
+            <form class="bouuut">
                 <input type="email" placeholder="Entrez votre email" required>
                 <button type="submit">S'abonner</button>
             </form>

@@ -331,10 +331,12 @@
                     </div>
 
                 </section>
-                <form action="mode.php" method="post" class="btn"></form>
-                <button class="enregistrer-btn">Enregistrer des services</button>
-
+                <form action="mode.php" method="post" class="btn">
+                    <button class="enregistrer-btn">Enregistrer des services</button>
+                </form>
             </div>
+
+        </div>
 
     </section>
 
