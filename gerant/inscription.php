@@ -31,23 +31,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (!$conn) {
                 $error = "Erreur de connexion à la base de données.";
             } else {
-                // Vérifier si l'email existe déjà
-                $checkEmailQuery = "SELECT email_gerant FROM t_gerant WHERE email_gerant = :email_gerant";
-                $stmt = $conn->prepare($checkEmailQuery);
-                $stmt->execute(['email_gerant' => $email_gerant]);
-                if ($stmt->fetch()) {
+                // Vérifier l'unicité de l'email
+                $checkEmailQuery = "SELECT email_gerant FROM t_gerant WHERE email_gerant = '$email_gerant'";
+                $checkEmailResult = $conn->query($checkEmailQuery);
+                if ($checkEmailResult->fetch()) {
                     $error = "Cet email est déjà utilisé.";
                 } else {
-                    // Stocker dans la session pour les étapes suivantes
-                    $_SESSION['gerant']['nom_complet'] = $nom_complet;
-                    $_SESSION['gerant']['email_gerant'] = $email_gerant;
-                    $_SESSION['gerant']['contact_gerant'] = "+225" . $contact_gerant;
-                    $_SESSION['gerant']['mdp'] = password_hash($mdp, PASSWORD_DEFAULT);
-                    $_SESSION['gerant']['confirmation'] = password_hash($confirmation, PASSWORD_DEFAULT);
-                    $_SESSION['gerant']['date'] = date("Y-m-d");
+                    $contact_gerant = "+225" . $contact_gerant; // Ajouter +225 pour la base
+                    $date = date("Y-m-d");
 
-                    $success = "Informations personnelles enregistrées ! Redirection dans 3 secondes...";
-                    header("Refresh: 3; url=inscription_2.php");
+                    // Requête SQL
+                    $req = "INSERT INTO t_gerant (nom_complet, email_gerant, contact_gerant, mdp, confirmation, date)
+                            VALUES ('$nom_complet', '$email_gerant', '$contact_gerant', '$mdp','$confirmation', '$date')";
+                    $rep = $conn->exec($req);
+                    if ($rep === false) {
+                        $error = "Erreur lors de l'insertion dans la base de données. Vérifiez les données.";
+                    } else {
+                        $success = "Informations Personnelles enregistrées ! ";
+                        header("Refresh: 3; url=inscription_2.php");
+                    }
                 }
             }
         }
